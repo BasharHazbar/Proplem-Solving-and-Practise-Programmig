@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "count overlap days in tow periods", "count overlap days in tow periods.vcxproj", "{F98F1474-1048-4E09-B94C-5B6A7EEEBBEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F98F1474-1048-4E09-B94C-5B6A7EEEBBEB}.Debug|x64.ActiveCfg = Debug|x64
+		{F98F1474-1048-4E09-B94C-5B6A7EEEBBEB}.Debug|x64.Build.0 = Debug|x64
+		{F98F1474-1048-4E09-B94C-5B6A7EEEBBEB}.Debug|x86.ActiveCfg = Debug|Win32
+		{F98F1474-1048-4E09-B94C-5B6A7EEEBBEB}.Debug|x86.Build.0 = Debug|Win32
+		{F98F1474-1048-4E09-B94C-5B6A7EEEBBEB}.Release|x64.ActiveCfg = Release|x64
+		{F98F1474-1048-4E09-B94C-5B6A7EEEBBEB}.Release|x64.Build.0 = Release|x64
+		{F98F1474-1048-4E09-B94C-5B6A7EEEBBEB}.Release|x86.ActiveCfg = Release|Win32
+		{F98F1474-1048-4E09-B94C-5B6A7EEEBBEB}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EBF4D12B-0E52-4FE7-986D-2C01EBCC5F6C}
+	EndGlobalSection
+EndGlobal
