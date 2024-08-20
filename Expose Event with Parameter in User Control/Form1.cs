@@ -21,5 +21,15 @@ namespace Expose_Event_with_Parameter_in_User_Control
         {
             MessageBox.Show("The Reslut of Calc is: " + obj);
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ctrlCalculator21_onCalculateComplate(object sender, ctrlCalculator2.CalculateComplateEvenrArgs e)
+        {
+            MessageBox.Show($" Reslut = {e.Result} Value1 = {e.Value1}  Value2 = {e.Value2} ");
+        }
     }
 }

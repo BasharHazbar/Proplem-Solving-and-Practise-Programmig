@@ -31,19 +31,19 @@ namespace Expose_Event_with_Parameter_in_User_Control
 
         private void btnCalc_Click(object sender, EventArgs e)
         {
-            lbResult.Text = (int.Parse(textBox1.Text) + int.Parse(textBox2.Text)).ToString();
+            lbResult.Text = (int.Parse(txtNumber1.Text) + int.Parse(txtNumber2.Text)).ToString();
             if (OnCalculated != null)
             {
                 Calculated(int.Parse(lbResult.Text));
             }
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtNumber1_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtNumber2_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
