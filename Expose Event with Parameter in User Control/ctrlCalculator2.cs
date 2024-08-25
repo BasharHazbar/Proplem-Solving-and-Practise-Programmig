@@ -51,6 +51,7 @@ namespace Expose_Event_with_Parameter_in_User_Control
             if (onCalculateComplate != null)
             {
                 //RaisOnCalculateComplate(Value1,Value2,Result);
+                //onCalculateComplate(this, new CalculateComplateEvenrArgs(Value1, Value2, Result));
                 onCalculateComplate?.Invoke(this, new CalculateComplateEvenrArgs(Value1, Value2, Result));
             }
         }
