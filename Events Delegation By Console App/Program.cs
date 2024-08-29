@@ -9,6 +9,24 @@ namespace Events_Delegation_By_Console_App
 {
     public class Program
     {
+
+
+        /// ======================Multicast Delegate=========================== ///
+      
+        public delegate void MyCalc(int Number1, int Number2);
+
+        public static MyCalc _Calc;
+
+        public static void Sum(int Number1, int Number2)
+        {
+            Console.WriteLine("Result Of Sum : " + (Number1 + Number2));
+        }
+
+        public static void Substraction(int Number1, int Number2)
+        {
+            Console.WriteLine("Result Of Substraction : " + (Number1 - Number2));
+        }
+
         static void Main(string[] args)
         {
             /*         
@@ -33,7 +51,7 @@ namespace Events_Delegation_By_Console_App
 
 
 
-               ///=========================News Publisher Subscribers==================================///
+        ///=========================News Publisher Subscribers==================================///
                         
 
                         NewsPublisher publisher = new NewsPublisher();
@@ -59,7 +77,7 @@ namespace Events_Delegation_By_Console_App
                         publisher.PublishNews(Title, Artical);
 
 
-                        ///=========================Order Product==================================///
+         ///=========================Order Product==================================///
 
 
                         Order Order = new Order();
@@ -82,14 +100,32 @@ namespace Events_Delegation_By_Console_App
 
             /// ======================Logger=========================== ///
 
+            /*
+                        Logger LoggerToScreen = new Logger(LoggerImpl.LogToScreen);
 
-            Logger LoggerToScreen = new Logger(LoggerImpl.LogToScreen);
+                        LoggerToScreen.Log("You Logged to the Screen Now");
 
-            LoggerToScreen.Log("You Logged to the Screen Now");
+                        Logger LoggerToFile = new Logger(LoggerImpl.LogToFile);
 
-            Logger LoggerToFile = new Logger(LoggerImpl.LogToFile);
+                        LoggerToFile.Log("You Logged to the File Now");*/
 
-            LoggerToFile.Log("You Logged to the File Now");
+
+            /// ======================Multicast Delegate=========================== ///
+            /// 
+
+
+            _Calc = Sum;
+            _Calc += Substraction;
+
+
+            _Calc?.Invoke(4,2);
+
+            _Calc(12,23);
+
+            _Calc -= Substraction;
+
+            _Calc(13,14);
+
 
         }
     }
