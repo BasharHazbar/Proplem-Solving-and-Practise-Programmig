@@ -27,6 +27,30 @@ namespace Events_Delegation_By_Console_App
             Console.WriteLine("Result Of Substraction : " + (Number1 - Number2));
         }
 
+
+        /// ======================Func Delegate=========================== ///
+
+
+        /// Defult Way
+        /// 
+
+        delegate int Squere(int Number);
+
+        static int SquereMethod(int Number)
+        {
+            return Number * Number;
+        }
+
+
+        /// With Func with 
+
+        static Func<int, int> SquareFunc = SquereMethod2;
+
+        static int SquereMethod2(int Number)
+        {
+            return Number * Number;
+        }
+
         static void Main(string[] args)
         {
             /*         
@@ -113,19 +137,34 @@ namespace Events_Delegation_By_Console_App
             /// ======================Multicast Delegate=========================== ///
             /// 
 
+            /*
+                        _Calc = Sum;
+                        _Calc += Substraction;
 
-            _Calc = Sum;
-            _Calc += Substraction;
+
+                        _Calc?.Invoke(4,2);
+
+                        _Calc(12,23);
+
+                        _Calc -= Substraction;
+
+                        _Calc(13,14);
+            */
+
+            /// ======================Func Delegate=========================== ///
 
 
-            _Calc?.Invoke(4,2);
+            /// Defult Way
+            ///
 
-            _Calc(12,23);
+            Squere Squere = new Squere(SquereMethod);
 
-            _Calc -= Substraction;
+            Console.WriteLine("Defult Way Squere is : " + Squere(50));
 
-            _Calc(13,14);
 
+            /// With Func with 
+
+            Console.WriteLine("Func Way Squere is : " + SquareFunc(50));
 
         }
     }
