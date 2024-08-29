@@ -51,6 +51,37 @@ namespace Events_Delegation_By_Console_App
             return Number * Number;
         }
 
+
+
+        /// ======================Action Delegate=========================== ///
+        /// 
+
+        static Action NoneArg = PrintNoneArg;
+
+        static Action<int> OneArg = PrintOneArg;
+
+        static Action<int,string> TwoArg = PrintTwoArg;
+
+        static void PrintNoneArg()
+        {
+            Console.WriteLine("NoneArg");
+        }
+        static void PrintOneArg(int Number1)
+        {
+            Console.WriteLine("PrintOneArg : " + Number1);
+        }
+
+        static void PrintTwoArg(int Number1, string Text)
+        {
+            Console.WriteLine("PrintTwoArg : " + Number1 + " " + Text);
+        }
+
+
+        static void PrintNumber(int Number1)
+        {
+            Console.WriteLine("Result Of Substraction : " + Number1);
+        }
+
         static void Main(string[] args)
         {
             /*         
@@ -156,7 +187,7 @@ namespace Events_Delegation_By_Console_App
 
             /// Defult Way
             ///
-
+/*
             Squere Squere = new Squere(SquereMethod);
 
             Console.WriteLine("Defult Way Squere is : " + Squere(50));
@@ -164,8 +195,21 @@ namespace Events_Delegation_By_Console_App
 
             /// With Func with 
 
-            Console.WriteLine("Func Way Squere is : " + SquareFunc(50));
+            Console.WriteLine("Func Way Squere is : " + SquareFunc(50));*/
 
+
+            /// ======================Action Delegate=========================== ///
+            /// 
+
+
+            NoneArg();
+
+            OneArg(50);
+
+            TwoArg(50,"Hallo Prince");
+
+
+           
         }
     }
 }
