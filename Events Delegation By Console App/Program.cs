@@ -11,70 +11,85 @@ namespace Events_Delegation_By_Console_App
     {
         static void Main(string[] args)
         {
-            Thermostat Thermostat = new Thermostat();
-            Display display = new Display();
+            /*         
+             ///========================= TemperatureChanged ==================================///
+                      
+                       Thermostat Thermostat = new Thermostat();
+                        Display display = new Display();
 
-            display.Subscribe(Thermostat);
+                        display.Subscribe(Thermostat);
 
-            Thermostat.SetThermostat(20);
+                        Thermostat.SetThermostat(20);
 
-            Thermostat.SetThermostat(30);
+                        Thermostat.SetThermostat(30);
 
-            Thermostat.SetThermostat(40);
+                        Thermostat.SetThermostat(40);
 
-            Thermostat.SetThermostat(100);
+                        Thermostat.SetThermostat(100);
 
-            Thermostat.SetThermostat(100);
+                        Thermostat.SetThermostat(100);
 
-            Thermostat.SetThermostat(100);
-
-          
-
-
-            // News Publisher Subscribers
-
-            NewsPublisher publisher = new NewsPublisher();
-
-            NewsSubscriber subscriber1 = new NewsSubscriber("Ali");
-
-            subscriber1.Subscribe(publisher);
-
-            NewsSubscriber subscriber2 = new NewsSubscriber("Saleh");
-
-            subscriber2.Subscribe(publisher);
+                        Thermostat.SetThermostat(100);
 
 
-            NewsSubscriber subscriber3 = new NewsSubscriber("Mohammed");
 
-            subscriber3.Subscribe(publisher);
+               ///=========================News Publisher Subscribers==================================///
+                        
 
-            string Title = "A Bonsai Tree: An Autobiography";
+                        NewsPublisher publisher = new NewsPublisher();
 
-            string Artical = @"In October 1947, author Narendra Luther's family of six packed 
-                            quickly for a special train to Amritsar,";
+                        NewsSubscriber subscriber1 = new NewsSubscriber("Ali");
 
-            publisher.PublishNews(Title, Artical);
+                        subscriber1.Subscribe(publisher);
 
+                        NewsSubscriber subscriber2 = new NewsSubscriber("Saleh");
 
-            ///Order Product
-
-
-            Order Order = new Order();
+                        subscriber2.Subscribe(publisher);
 
 
-            EmailService EmailService = new EmailService();
+                        NewsSubscriber subscriber3 = new NewsSubscriber("Mohammed");
 
-            EmailService.Subscribe(Order);
+                        subscriber3.Subscribe(publisher);
 
-            SMSService SMSService = new SMSService();
+                        string Title = "A Bonsai Tree: An Autobiography";
 
-            SMSService.Subscribe(Order);
+                        string Artical = @"In October 1947, author Narendra Luther's family of six packed 
+                                        quickly for a special train to Amritsar,";
 
-            ShippingService ShippingService = new ShippingService();
+                        publisher.PublishNews(Title, Artical);
 
-            ShippingService.Subscribe(Order);
 
-            Order.Create(2, "Product1", "uweyru83478q");
+                        ///=========================Order Product==================================///
+
+
+                        Order Order = new Order();
+
+
+                        EmailService EmailService = new EmailService();
+
+                        EmailService.Subscribe(Order);
+
+                        SMSService SMSService = new SMSService();
+
+                        SMSService.Subscribe(Order);
+
+                        ShippingService ShippingService = new ShippingService();
+
+                        ShippingService.Subscribe(Order);
+
+                        Order.Create(2, "Product1", "uweyru83478q");*/
+
+
+            /// ======================Logger=========================== ///
+
+
+            Logger LoggerToScreen = new Logger(LoggerImpl.LogToScreen);
+
+            LoggerToScreen.Log("You Logged to the Screen Now");
+
+            Logger LoggerToFile = new Logger(LoggerImpl.LogToFile);
+
+            LoggerToFile.Log("You Logged to the File Now");
 
         }
     }
