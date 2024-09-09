@@ -42,7 +42,7 @@ namespace Events_Delegation_By_Console_App
         }
 
 
-        /// With Func with 
+        /// With Func
 
         static Func<int, int> SquareFunc = SquereMethod2;
 
@@ -53,6 +53,11 @@ namespace Events_Delegation_By_Console_App
 
 
 
+        /// With Func 
+        
+        static Func<int, int> SquareFuncByLembda = Number => Number * Number;
+
+        
         /// ======================Action Delegate=========================== ///
         /// 
 
@@ -76,12 +81,23 @@ namespace Events_Delegation_By_Console_App
             Console.WriteLine("PrintTwoArg : " + Number1 + " " + Text);
         }
 
-
         static void PrintNumber(int Number1)
         {
             Console.WriteLine("Result Of Substraction : " + Number1);
         }
 
+
+        /// ======================Predicate Delegate=========================== ///
+        ///
+
+        static Predicate<int> IsEvenPredicate = IsEven;
+
+        static bool IsEven(int x)
+        {
+            return x % 2 == 0;
+        }
+
+        
         static void Main(string[] args)
         {
             /*         
@@ -187,29 +203,40 @@ namespace Events_Delegation_By_Console_App
 
             /// Defult Way
             ///
-/*
-            Squere Squere = new Squere(SquereMethod);
+            /*
+                        Squere Squere = new Squere(SquereMethod);
 
-            Console.WriteLine("Defult Way Squere is : " + Squere(50));
+                        Console.WriteLine("Defult Way Squere is : " + Squere(50));
 
 
-            /// With Func with 
+                        /// With Func with 
 
-            Console.WriteLine("Func Way Squere is : " + SquareFunc(50));*/
+                        Console.WriteLine("Func Way Squere is : " + SquareFunc(50));*/
 
 
             /// ======================Action Delegate=========================== ///
             /// 
 
+            /*
+                        NoneArg();
 
-            NoneArg();
+                        OneArg(50);
 
-            OneArg(50);
+                        TwoArg(50,"Hallo Prince");
+            */
 
-            TwoArg(50,"Hallo Prince");
+
+            /// ======================Predicate Delegate=========================== ///
+            ///
+
+            //  Console.WriteLine("Is Even Number ?  " + IsEvenPredicate(4)); 
 
 
-           
+            /// ======================Predicate Delegate=========================== ///
+
+            Console.WriteLine("Square Func By Lembda ?  " + SquareFuncByLembda(4));
+
+
         }
     }
 }
